@@ -1,23 +1,26 @@
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import InquiryForm from './components/InquiryForm';
-import Features from './components/Features';
-import PaymentOptions from './components/PaymentOptions';
-import CEO from './components/CEO';
-import Footer from './components/Footer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import InquiryPage from './pages/InquiryPage';
+import PaymentPage from './pages/PaymentPage';
+import AboutPage from './pages/AboutPage';
+import PaymentSuccessPage from './pages/PaymentSuccessPage';
+import PaymentCancelPage from './pages/PaymentCancelPage';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Hero />
-      <InquiryForm />
-      <Features />
-      <PaymentOptions />
-      <CEO />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/inquiry" element={<InquiryPage />} />
+          <Route path="/payment" element={<PaymentPage />} />
+          <Route path="/payment/success" element={<PaymentSuccessPage />} />
+          <Route path="/payment/cancel" element={<PaymentCancelPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

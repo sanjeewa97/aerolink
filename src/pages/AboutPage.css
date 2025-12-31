@@ -1,0 +1,378 @@
+.about-page {
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Welcome Section */
+.welcome-section {
+    margin-bottom: 3rem;
+}
+
+.welcome-section h1 {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.welcome-section h2 {
+    font-size: 1.25rem;
+    color: var(--accent-orange);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.welcome-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--dark-gray);
+    text-align: justify;
+}
+
+/* Services Section */
+.services-section {
+    margin-bottom: 3rem;
+}
+
+.services-section h2 {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--accent-orange);
+    padding-bottom: 0.5rem;
+}
+
+.service-category {
+    margin-bottom: 2rem;
+}
+
+.service-category h3 {
+    font-size: 1.5rem;
+    color: var(--secondary-blue);
+    margin-bottom: 1rem;
+}
+
+.service-category ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.service-category ul li {
+    padding: 0.5rem 0 0.5rem 2rem;
+    position: relative;
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+.service-category ul li::before {
+    content: "✈";
+    position: absolute;
+    left: 0;
+    color: var(--accent-orange);
+    font-size: 1.2rem;
+}
+
+/* Why Choose Section */
+.why-choose-section {
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.05) 0%, rgba(255, 111, 0, 0.05) 100%);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+}
+
+.why-choose-section h2 {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+}
+
+.why-choose-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.why-choose-section ul li {
+    padding: 0.75rem 0 0.75rem 2.5rem;
+    position: relative;
+    color: var(--dark-gray);
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.why-choose-section ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--success-green);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.why-choose-section ul li strong {
+    color: var(--primary-blue);
+}
+
+/* Section Divider */
+.section-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-orange), transparent);
+    margin: 3rem 0;
+}
+
+/* Mission & Vision Sections */
+.mission-section,
+.vision-section {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    border-left: 4px solid var(--primary-blue);
+    background: #f8f9fa;
+    border-radius: var(--radius-md);
+}
+
+.mission-section h2,
+.vision-section h2 {
+    font-size: 1.75rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.mission-section p,
+.vision-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--dark-gray);
+}
+
+/* CEO Section */
+.ceo-section {
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.03) 0%, rgba(255, 111, 0, 0.03) 100%);
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--light-gray);
+}
+
+.ceo-section-title {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 2rem;
+    text-align: center;
+    border-bottom: 3px solid var(--accent-orange);
+    padding-bottom: 1rem;
+}
+
+.ceo-message {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2.5rem;
+}
+
+.ceo-message p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--dark-gray);
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.ceo-message p:last-of-type {
+    margin-bottom: 0;
+}
+
+.ceo-signature {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--light-gray);
+    text-align: right;
+    font-style: italic;
+    color: var(--secondary-blue);
+}
+
+.ceo-signature strong {
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+}
+
+.leadership-divider {
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--accent-orange), var(--primary-blue));
+    margin: 3rem 0;
+}
+
+/* Leadership Profile */
+.leadership-profile {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.leadership-profile h3 {
+    font-size: 1.75rem;
+    color: var(--primary-blue);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.profile-details {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--accent-orange);
+}
+
+.profile-details p {
+    font-size: 1.05rem;
+    color: var(--dark-gray);
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.profile-details p:last-child {
+    margin-bottom: 0;
+}
+
+.profile-details strong {
+    color: var(--primary-blue);
+    min-width: 120px;
+    display: inline-block;
+}
+
+.profile-description {
+    margin-bottom: 2rem;
+}
+
+.profile-description p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--dark-gray);
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.operating-principles {
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.05) 0%, rgba(255, 111, 0, 0.05) 100%);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 2rem;
+}
+
+.operating-principles h4 {
+    font-size: 1.2rem;
+    color: var(--secondary-blue);
+    margin-bottom: 1rem;
+}
+
+.operating-principles ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.operating-principles ul li {
+    padding: 0.5rem 0 0.5rem 2rem;
+    position: relative;
+    color: var(--dark-gray);
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.operating-principles ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--accent-orange);
+    font-size: 1.3rem;
+}
+
+.ceo-vision {
+    background: var(--primary-blue);
+    color: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+}
+
+.ceo-vision p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    border-radius: var(--radius-lg);
+    color: white;
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.cta-section .btn {
+    font-size: 1.1rem;
+    padding: 1rem 3rem;
+    background: var(--accent-orange);
+    border: none;
+}
+
+.cta-section .btn:hover {
+    background: #ff8533;
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .welcome-section h1 {
+        font-size: 2rem;
+    }
+
+    .welcome-section h2 {
+        font-size: 1.1rem;
+    }
+
+    .services-section h2,
+    .why-choose-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .service-category h3 {
+        font-size: 1.25rem;
+    }
+
+    .cta-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-section p {
+        font-size: 1rem;
+    }
+}

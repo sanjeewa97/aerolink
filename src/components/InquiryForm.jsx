@@ -11,8 +11,23 @@ export default function InquiryForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const message = `Hello! I'd like to make an inquiry.\nName: ${formData.name}\nWhatsApp: ${formData.whatsapp}\nEmail: ${formData.email}\nLuggage: ${formData.luggage}`;
-        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+
+        const whatsappNumber = '94783366630';
+
+        // Format the message
+        const message = `*New Flight Inquiry from AeroLink Website*
+
+👤 *Name:* ${formData.name}
+📱 *WhatsApp:* ${formData.whatsapp}
+📧 *Email:* ${formData.email}
+🧳 *Luggage:* ${formData.luggage}
+
+Please provide flight details and pricing.`;
+
+        // Create WhatsApp link
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+        // Open WhatsApp in new tab
         window.open(whatsappUrl, '_blank');
     };
 

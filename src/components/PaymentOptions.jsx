@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './PaymentOptions.css';
 
 export default function PaymentOptions() {
@@ -8,25 +9,13 @@ export default function PaymentOptions() {
                 <div className="payment-card">
                     <div className="payment-logos">
                         <div className="payment-logo">
-                            <svg viewBox="0 0 48 32" fill="none">
-                                <rect width="48" height="32" rx="4" fill="#1A1F71" />
-                                <text x="24" y="20" fontSize="14" fill="white" textAnchor="middle" fontWeight="bold">VISA</text>
-                            </svg>
+                            <img src="/visa-logo.png" alt="Visa" />
                         </div>
                         <div className="payment-logo">
-                            <svg viewBox="0 0 48 32" fill="none">
-                                <rect width="48" height="32" rx="4" fill="white" stroke="#EB001B" />
-                                <circle cx="18" cy="16" r="8" fill="#EB001B" />
-                                <circle cx="30" cy="16" r="8" fill="#F79E1B" />
-                                <path d="M24 10a8 8 0 0 0 0 12 8 8 0 0 0 0-12z" fill="#FF5F00" />
-                            </svg>
+                            <img src="/mastercard-logo.png" alt="Mastercard" />
                         </div>
                         <div className="payment-logo">
-                            <svg viewBox="0 0 48 32" fill="none">
-                                <rect width="48" height="32" rx="4" fill="#003087" />
-                                <text x="12" y="14" fontSize="8" fill="#009CDE" fontWeight="bold">Pay</text>
-                                <text x="12" y="22" fontSize="8" fill="#009CDE" fontWeight="bold">Pal</text>
-                            </svg>
+                            <img src="/paypal-logo.png" alt="PayPal" />
                         </div>
                         <div className="payment-logo bank-transfer">
                             <svg viewBox="0 0 48 32" fill="none" stroke="currentColor" strokeWidth="2">
@@ -38,7 +27,7 @@ export default function PaymentOptions() {
                             <span>Bank Transfer</span>
                         </div>
                     </div>
-                    <button className="btn btn-primary proceed-btn">Proceed to Payment</button>
+                    <Link to="/payment" className="btn btn-primary proceed-btn">Proceed to Payment</Link>
                 </div>
             </div>
         </section>

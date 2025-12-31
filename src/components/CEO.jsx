@@ -11,7 +11,7 @@ export default function CEO() {
                     </div>
                     <div className="ceo-info">
                         <p className="ceo-description">
-                            Our CEO, <strong>Vides Ayeshmantha</strong>, B.Sc. Civil Engineer, currently managing
+                            Our CEO, <strong>K.A.V. Ayeshmantha</strong>, B.Sc. Civil Engineer, currently managing
                             top construction projects in Maldives, leads AeroLink with expertise and trust.
                         </p>
                         <button className="btn btn-primary">Read More</button>
