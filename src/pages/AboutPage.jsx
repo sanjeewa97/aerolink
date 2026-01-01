@@ -98,8 +98,8 @@ export default function AboutPage() {
                 {/* Divider */}
                 <div className="section-divider"></div>
 
-                {/* CEO Section */}
-                <section className="ceo-section">
+                {/* CEO's Message & Leadership */}
+                <section className="ceo-section" id="ceo-section">
                     <h2 className="ceo-section-title">CEO's Message</h2>
 
                     <div className="ceo-message">

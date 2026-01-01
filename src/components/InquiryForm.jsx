@@ -12,7 +12,7 @@ export default function InquiryForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const whatsappNumber = '94783366630';
+        const whatsappNumber = '+94717777432';
 
         // Format the message
         const message = `*New Flight Inquiry from AeroLink Website*
@@ -77,11 +77,12 @@ Please provide flight details and pricing.`;
                                 onChange={handleChange}
                                 required
                             >
-                                <option>Luggage Requirement</option>
-                                <option>Carry-on Only</option>
-                                <option>1 Checked Bag</option>
-                                <option>2 Checked Bags</option>
-                                <option>3+ Checked Bags</option>
+                                <option> Luggage Requirements </option>
+                                <option> 7kg (1 piece)</option>
+                                <option> 7kg plus 20kg</option>
+                                <option> 7kg plus 30kg</option>
+                                <option> 7kg plus 40kg</option>
+                                <option> 7kg plus 45kg</option>
                             </select>
                         </div>
                         <button type="submit" className="btn btn-success">

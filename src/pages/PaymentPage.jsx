@@ -13,8 +13,8 @@ export default function PaymentPage() {
     const [paymentAmount, setPaymentAmount] = useState('0.00');
     const [isProcessing, setIsProcessing] = useState(false);
 
-    // Demo Payment Mode (works without PayHere credentials)
-    const USE_DEMO_MODE = true; // Set to false when you have PayHere credentials
+    // Demo Payment Mode 
+    const USE_DEMO_MODE = true;
 
     // PayHere Payment Handler
     const handleSubmit = (e) => {
@@ -37,11 +37,11 @@ export default function PaymentPage() {
             return;
         }
 
-        // Real PayHere payment (requires valid merchant credentials)
+        // Real PayHere payment 
         handlePayHerePayment();
     };
 
-    // Demo Payment (for testing without PayHere account)
+    // Demo Payment 
     const handleDemoPayment = () => {
         setIsProcessing(true);
 
@@ -73,7 +73,7 @@ export default function PaymentPage() {
         }, 1000);
     };
 
-    // Real PayHere Payment (requires valid merchant account)
+    // Real PayHere Payment 
     const handlePayHerePayment = () => {
         // Check if PayHere is loaded
         if (typeof window.payhere === 'undefined') {

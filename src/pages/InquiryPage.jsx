@@ -17,20 +17,27 @@ export default function InquiryPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const message = `Hello! I'd like to make a flight inquiry.
 
+
+        const businessNumber = '+94717777432';
+
+        const message = `*New Flight Inquiry from AeroLink*
+
+👤 *Customer Details:*
 Name: ${formData.name}
 WhatsApp: ${formData.whatsapp}
 Email: ${formData.email}
-Luggage Requirements: ${formData.luggage}
+Luggage: ${formData.luggage}
 
-Flight Details:
+✈️ *Flight Details:*
 From: ${formData.leavingFrom}
 To: ${formData.goingTo}
 Departure: ${formData.departureDate}
-Return: ${formData.returnDate}`;
+Return: ${formData.returnDate}
 
-        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+Please provide available options and pricing.`;
+
+        const whatsappUrl = `https://wa.me/${businessNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     };
 
@@ -123,11 +130,12 @@ Return: ${formData.returnDate}`;
                                         onChange={handleChange}
                                         required
                                     >
-                                        <option>Luggage Requirements</option>
-                                        <option>Carry-on Only</option>
-                                        <option>1 Checked Bag</option>
-                                        <option>2 Checked Bags</option>
-                                        <option>3+ Checked Bags</option>
+                                        <option> Luggage Requirements </option>
+                                        <option> 7kg (1 piece) </option>
+                                        <option> 7kg plus 20kg </option>
+                                        <option> 7kg plus 30kg </option>
+                                        <option> 7kg plus 40kg </option>
+                                        <option> 7kg plus 45kg </option>
                                     </select>
                                 </label>
                             </div>
@@ -213,14 +221,6 @@ Return: ${formData.returnDate}`;
                             Submit Inquiry
                         </button>
                     </form>
-
-                    <div className="inquiry-note">
-                        <p>
-                            Once submitted, an automatic message should be sent to my WhatsApp. The system
-                            should collect the following details as input: <strong>name, WhatsApp number, email address,
-                                and luggage requirements.</strong>
-                        </p>
-                    </div>
                 </div>
             </div>
         </div>
