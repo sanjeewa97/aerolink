@@ -11,6 +11,10 @@ export default function PaymentPage() {
         nameOnCard: ''
     });
     const [paymentAmount, setPaymentAmount] = useState('0.00');
+    const [isProcessing, setIsProcessing] = useState(false);
+
+    // Demo Payment Mode (works without PayHere credentials)
+    const USE_DEMO_MODE = true; // Set to false when you have PayHere credentials
 
     // PayHere Payment Handler
     const handleSubmit = (e) => {
@@ -27,6 +31,50 @@ export default function PaymentPage() {
             return;
         }
 
+        // Use demo mode if enabled
+        if (USE_DEMO_MODE) {
+            handleDemoPayment();
+            return;
+        }
+
+        // Real PayHere payment (requires valid merchant credentials)
+        handlePayHerePayment();
+    };
+
+    // Demo Payment (for testing without PayHere account)
+    const handleDemoPayment = () => {
+        setIsProcessing(true);
+
+        // Generate order ID
+        const orderId = "DEMO_ORDER_" + Date.now();
+
+        // Show processing message
+        const confirmed = window.confirm(
+            `DEMO MODE: Process payment of LKR ${paymentAmount}?\n\n` +
+            `Order ID: ${orderId}\n` +
+            `Name: ${formData.nameOnCard}\n\n` +
+            `Click OK to simulate successful payment\n` +
+            `Click Cancel to simulate payment cancellation`
+        );
+
+        // Simulate payment processing delay
+        setTimeout(() => {
+            setIsProcessing(false);
+
+            if (confirmed) {
+                // Simulate successful payment
+                console.log("Demo payment successful. Order ID:", orderId);
+                navigate('/payment/success?order=' + orderId);
+            } else {
+                // User cancelled
+                console.log("Demo payment cancelled");
+                navigate('/payment/cancel');
+            }
+        }, 1000);
+    };
+
+    // Real PayHere Payment (requires valid merchant account)
+    const handlePayHerePayment = () => {
         // Check if PayHere is loaded
         if (typeof window.payhere === 'undefined') {
             alert('Payment system is loading. Please wait a moment and try again.');
@@ -40,7 +88,7 @@ export default function PaymentPage() {
         // PayHere Payment Configuration
         const payment = {
             sandbox: true,
-            merchant_id: "1221149", // Valid PayHere sandbox merchant ID
+            merchant_id: import.meta.env.VITE_PAYHERE_MERCHANT_ID || "YOUR_MERCHANT_ID", // Valid PayHere sandbox merchant ID
             return_url: window.location.origin + "/payment/success",
             cancel_url: window.location.origin + "/payment/cancel",
             notify_url: undefined,
@@ -48,8 +96,8 @@ export default function PaymentPage() {
             items: "Flight Booking",
             amount: parseFloat(paymentAmount).toFixed(2),
             currency: "LKR",
-            first_name: formData.nameOnCard.split(' ')[0] || "John",
-            last_name: formData.nameOnCard.split(' ').slice(1).join(' ') || "Doe",
+            first_name: formData.nameOnCard.split(' ')[0] || "Customer",
+            last_name: formData.nameOnCard.split(' ').slice(1).join(' ') || "",
             email: "customer@example.com",
             phone: "0771234567",
             address: "No.1, Galle Road",
@@ -60,7 +108,7 @@ export default function PaymentPage() {
             delivery_country: "Sri Lanka"
         };
 
-        console.log('Starting payment with config:', payment);
+        console.log('Starting PayHere payment:', payment);
 
         // Set up PayHere callbacks
         window.payhere.onCompleted = function (orderId) {
@@ -123,6 +171,20 @@ export default function PaymentPage() {
                     </svg>
                     Back
                 </button>
+
+                {USE_DEMO_MODE && (
+                    <div style={{
+                        background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
+                        color: 'white',
+                        padding: '1rem',
+                        borderRadius: '8px',
+                        marginBottom: '1.5rem',
+                        textAlign: 'center',
+                        fontWeight: '600'
+                    }}>
+                        🔧 DEMO MODE: Payment simulation enabled (no real payment required)
+                    </div>
+                )}
 
                 <h1 className="payment-title">Secure Payment Portal</h1>
                 <p className="payment-subtitle">Please enter your payment details to complete the transaction.</p>
@@ -260,8 +322,8 @@ export default function PaymentPage() {
                             </label>
                         </div>
 
-                        <button type="submit" className="btn btn-primary complete-payment-btn">
-                            Complete Payment
+                        <button type="submit" className="btn btn-primary complete-payment-btn" disabled={isProcessing}>
+                            {isProcessing ? 'Processing...' : (USE_DEMO_MODE ? 'Simulate Payment (Demo)' : 'Complete Payment')}
                         </button>
 
                         <div className="or-divider">Or</div>
