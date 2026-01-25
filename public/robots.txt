@@ -1,0 +1,16 @@
+# Robots.txt for AeroLink
+# This file tells search engines which pages to crawl
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Block access to payment processing pages (for security)
+Disallow: /payment/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://travexasolutions.com/sitemap.xml
+
+# Crawl-delay (optional, helps prevent overload)
+# Crawl-delay: 1
