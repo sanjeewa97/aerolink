@@ -45,3 +45,6 @@ firebase.json
 
 # OS
 Thumbs.db
+
+# Google Search Console Verification
+google*.html
