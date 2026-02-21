@@ -49,8 +49,19 @@
 }
 
 @media (max-width: 768px) {
+    .inquiry-section {
+        padding: 2rem 0;
+        margin-top: -1rem;
+    }
+
     .inquiry-card {
-        padding: 1.5rem;
+        padding: 1.5rem 1.25rem;
+        border-radius: 16px;
+        margin: 0 1rem;
+    }
+
+    .inquiry-title {
+        font-size: 1.4rem;
     }
 
     .form-row {
@@ -61,7 +72,15 @@
         grid-column: 1;
     }
 
+    .inquiry-form input,
+    .inquiry-form select {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
     .inquiry-form .btn-success {
         max-width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
     }
 }

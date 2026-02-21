@@ -1,174 +1,413 @@
-.inquiry-page {
+/* =============================================
+   INQUIRY PAGE – Premium Design
+   ============================================= */
+.iq-page {
     min-height: 100vh;
-    background: linear-gradient(135deg, rgba(74, 144, 226, 0.05) 0%, rgba(43, 127, 217, 0.05) 100%);
-    padding: 2rem 0;
+    background: #f2f5fa;
+    font-family: 'Inter', sans-serif;
 }
 
-.inquiry-page-container {
-    max-width: 700px;
+/* ── Hero ── */
+.iq-hero {
+    position: relative;
+    background: linear-gradient(135deg, #0f2044 0%, #1e5faa 55%, #2b7fd9 100%);
+    padding: 5rem 2rem 4rem;
+    overflow: hidden;
+}
+
+.iq-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 80% 0%, rgba(255, 140, 0, 0.15), transparent 60%),
+        radial-gradient(ellipse at 20% 100%, rgba(43, 127, 217, 0.25), transparent 50%);
+}
+
+.iq-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.back-button {
+.iq-back-btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: none;
-    border: none;
-    color: var(--primary-blue);
-    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 0.88rem;
     font-weight: 600;
+    padding: 0.5rem 1.1rem;
+    border-radius: 50px;
     cursor: pointer;
-    padding: 0.5rem 0;
+    font-family: inherit;
+    margin-bottom: 1.8rem;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(8px);
+}
+
+.iq-back-btn:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transform: translateX(-3px);
+}
+
+.iq-back-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.iq-hero-badge {
+    display: inline-block;
+    background: rgba(255, 140, 0, 0.18);
+    border: 1px solid rgba(255, 140, 0, 0.4);
+    color: #ffb347;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+}
+
+.iq-hero-content h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    color: white;
+    margin-bottom: 0.8rem;
+    letter-spacing: -1px;
+    line-height: 1.1;
+}
+
+.iq-hero-content p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 500px;
+    line-height: 1.7;
+}
+
+/* ── Form Section ── */
+.iq-form-section {
+    padding: 3rem 2rem 5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.iq-form-wrap {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* ── Sidebar ── */
+.iq-sidebar {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem 1.75rem;
+    border: 1px solid rgba(30, 95, 170, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 5.5rem;
+}
+
+.iq-sidebar h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #0f2044;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
     margin-bottom: 1.5rem;
-    transition: all var(--transition-fast);
 }
 
-.back-button:hover {
-    color: var(--primary-blue-dark);
-    transform: translateX(-4px);
-}
-
-.back-button svg {
-    width: 20px;
-    height: 20px;
-}
-
-.inquiry-page-title {
-    font-size: 2rem;
-    color: var(--dark-blue);
+.iq-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
     margin-bottom: 2rem;
 }
 
-.inquiry-card-page {
-    background: var(--white);
-    border-radius: var(--radius-xl);
-    padding: 3rem 2.5rem;
-    box-shadow: var(--shadow-lg);
+.iq-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
 }
 
-.form-title {
-    text-align: center;
-    color: var(--dark-blue);
-    font-size: 1.75rem;
-    margin-bottom: 2.5rem;
+.iq-step-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0f2044, #1e5faa);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    letter-spacing: 0.5px;
 }
 
-.inquiry-form-page {
+.iq-step-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #0f2044;
+    margin-bottom: 0.2rem;
+}
+
+.iq-step-desc {
+    font-size: 0.78rem;
+    color: #6c757d;
+    line-height: 1.4;
+}
+
+.iq-contact-info {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.iq-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.82rem;
+    color: #4a6fa5;
+    font-weight: 500;
+}
+
+.iq-contact-item svg {
+    color: #ff8c00;
+    flex-shrink: 0;
+}
+
+/* ── Form Card ── */
+.iq-card {
+    background: white;
+    border-radius: 24px;
+    border: 1px solid rgba(30, 95, 170, 0.1);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+}
+
+.iq-card-header {
+    background: linear-gradient(135deg, #0f2044, #1e5faa);
+    padding: 2rem 2.5rem;
+}
+
+.iq-card-header h2 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 0.3rem;
+}
+
+.iq-card-header p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ── Form Fields ── */
+.iq-form {
+    padding: 2.5rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.form-row-page {
+.iq-section-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: -0.5rem;
+}
+
+.iq-section-label span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #1e5faa;
+    background: rgba(30, 95, 170, 0.07);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+}
+
+.iq-grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    gap: 1.2rem;
 }
 
-.form-group {
+.iq-field {
     display: flex;
     flex-direction: column;
+    gap: 0.45rem;
 }
 
-.form-group label {
+.iq-field label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #374151;
+    letter-spacing: 0.2px;
+}
+
+.iq-optional {
+    font-weight: 400;
+    color: #9ca3af;
+}
+
+.iq-input-wrap {
     position: relative;
     display: flex;
     align-items: center;
 }
 
-.form-group label svg {
+.iq-input-wrap svg {
     position: absolute;
     left: 1rem;
-    width: 20px;
-    height: 20px;
-    color: var(--medium-gray);
+    width: 17px;
+    height: 17px;
+    color: #9ca3af;
+    pointer-events: none;
+    flex-shrink: 0;
     z-index: 1;
 }
 
-.form-group input,
-.form-group select {
+.iq-input-wrap input,
+.iq-input-wrap select {
     width: 100%;
-    padding: 0.875rem 1rem 0.875rem 3rem;
-    border: 2px solid var(--light-gray);
-    border-radius: var(--radius-md);
-    font-size: 1rem;
-    font-family: var(--font-family);
-    transition: all var(--transition-fast);
-    background-color: #f8f9fa;
+    padding: 0.9rem 1rem 0.9rem 2.75rem;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    font-family: inherit;
+    color: #111827;
+    background: #fafbfc;
+    transition: all 0.25s ease;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
-.form-group input:focus,
-.form-group select:focus {
+.iq-input-wrap input:focus,
+.iq-input-wrap select:focus {
     outline: none;
-    border-color: var(--primary-blue);
+    border-color: #1e5faa;
+    background: white;
     box-shadow: 0 0 0 3px rgba(30, 95, 170, 0.1);
 }
 
-.form-group input::placeholder {
-    color: var(--medium-gray);
+.iq-input-wrap input::placeholder {
+    color: #b0b8c9;
 }
 
-.form-group input[type="date"] {
-    color: var(--dark-gray);
+.iq-input-wrap input[type="date"] {
+    color: #4b5563;
 }
 
-.form-group input[type="date"]::-webkit-calendar-picker-indicator {
-    cursor: pointer;
-}
-
-.submit-btn-page {
-    margin-top: 1rem;
+/* Submit Button */
+.iq-submit-btn {
     width: 100%;
-    max-width: 300px;
-    align-self: center;
-    padding: 1rem 2rem;
-    font-size: 1.0625rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #25d366 0%, #1ebe5b 100%);
+    color: white;
+    border: none;
+    padding: 1.1rem 2rem;
+    border-radius: 14px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    margin-top: 0.5rem;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+    transition: all 0.3s ease;
+    letter-spacing: 0.2px;
 }
 
-.inquiry-note {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: linear-gradient(135deg, rgba(74, 144, 226, 0.05) 0%, rgba(43, 127, 217, 0.05) 100%);
-    border-left: 4px solid var(--primary-blue);
-    border-radius: var(--radius-md);
+.iq-submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 35px rgba(37, 211, 102, 0.45);
 }
 
-.inquiry-note p {
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    color: var(--dark-gray);
-    margin: 0;
+.iq-submit-btn.iq-sent {
+    background: linear-gradient(135deg, #059669, #047857);
+    box-shadow: none;
+    transform: none;
 }
 
-.inquiry-note strong {
-    color: var(--primary-blue-dark);
+.iq-note {
+    text-align: center;
+    font-size: 0.78rem;
+    color: #9ca3af;
+    line-height: 1.5;
+    margin-top: -0.5rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .iq-form-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .iq-sidebar {
+        position: static;
+        order: 2;
+    }
+
+    .iq-card {
+        order: 1;
+    }
 }
 
 @media (max-width: 768px) {
-    .inquiry-page {
-        padding: 1rem 0;
+    .iq-hero {
+        padding: 4rem 1.25rem 3rem;
     }
 
-    .inquiry-card-page {
-        padding: 2rem 1.5rem;
+    .iq-form-section {
+        padding: 1.5rem 1.25rem 4rem;
     }
 
-    .form-row-page {
-        grid-template-columns: 1fr;
+    .iq-form-wrap {
         gap: 1.25rem;
     }
 
-    .form-title {
-        font-size: 1.5rem;
+    .iq-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
-    .inquiry-page-title {
-        font-size: 1.5rem;
+    .iq-card-header {
+        padding: 1.5rem 1.5rem;
     }
 
-    .submit-btn-page {
-        max-width: 100%;
+    .iq-form {
+        padding: 1.75rem 1.5rem;
+        gap: 1.2rem;
+    }
+
+    .iq-submit-btn {
+        font-size: 0.97rem;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .iq-hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .iq-sidebar {
+        padding: 1.5rem 1.25rem;
     }
 }

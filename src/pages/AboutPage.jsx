@@ -1,176 +1,237 @@
 import { useNavigate } from 'react-router-dom';
 import './AboutPage.css';
 
+const stats = [
+    { value: '2019', label: 'Established' },
+    { value: '5+', label: 'Years Experience' },
+    { value: '100+', label: 'Happy Travelers' },
+    { value: '24/7', label: 'Customer Support' },
+];
+
+const services = [
+    {
+        icon: '✈',
+        title: 'Air Ticketing Solutions',
+        items: [
+            'Domestic & international flight bookings',
+            'Competitive airfare sourcing',
+            'Ticket issuance, re-issuance & amendments',
+            'Group and bulk travel bookings',
+        ],
+    },
+    {
+        icon: '🏢',
+        title: 'Corporate Travel Management',
+        items: [
+            'Comprehensive corporate travel solutions',
+            'Policy-based airfare & cost optimization',
+            'Dedicated business traveler support',
+            'Travel planning tailored to your company',
+        ],
+    },
+    {
+        icon: '🌍',
+        title: 'Travel Support & Assistance',
+        items: [
+            'Customized holiday packages',
+            'Hotel bookings & accommodation',
+            'Airport transfers & ground arrangements',
+            'Visa assistance & travel documentation',
+        ],
+    },
+];
+
+const values = [
+    { icon: '🎯', title: 'Customer-Centric', desc: 'Personalized solutions crafted for every unique traveler' },
+    { icon: '🛡️', title: 'Reliable', desc: 'Consistent, transparent and professional service always' },
+    { icon: '💡', title: 'Experienced Team', desc: 'Travel professionals with years of industry expertise' },
+    { icon: '💎', title: 'Best Value', desc: 'Trusted airline partnerships delivering competitive pricing' },
+    { icon: '🚀', title: 'Flexible & Scalable', desc: 'Solutions that grow alongside your travel needs' },
+];
+
 export default function AboutPage() {
     const navigate = useNavigate();
 
     return (
         <div className="about-page">
-            <div className="about-container">
-                <button className="back-button" onClick={() => navigate('/')}>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+
+            {/* Hero Banner */}
+            <section className="about-hero">
+                <div className="about-hero-overlay" />
+                <button className="about-back-btn" onClick={() => navigate('/')}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                         <path d="M19 12H5M12 19l-7-7 7-7" />
                     </svg>
                     Back
                 </button>
+                <div className="about-hero-content">
+                    <span className="about-hero-badge">✈ Since 2019</span>
+                    <h1>About Aerolink Travel</h1>
+                    <p>Premium Air Ticketing &amp; Travel Management<br />— A Brand of Travexa Solutions —</p>
+                </div>
+                <div className="about-hero-wave">
+                    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                        <path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="#f8f9fa" />
+                    </svg>
+                </div>
+            </section>
 
-                {/* Welcome Section */}
-                <section className="welcome-section">
-                    <h1>Welcome to Aerolink Travel</h1>
-                    <h2>Premium Air Ticketing & Travel Management – A Brand of Tranava Solutions</h2>
+            {/* Stats Bar */}
+            <section className="about-stats">
+                {stats.map((s, i) => (
+                    <div className="stat-card" key={i}>
+                        <span className="stat-value">{s.value}</span>
+                        <span className="stat-label">{s.label}</span>
+                    </div>
+                ))}
+            </section>
 
+            <div className="about-main">
+
+                {/* Who We Are */}
+                <section className="about-intro">
+                    <div className="section-tag">Who We Are</div>
+                    <h2>Your Trusted Travel Partner</h2>
                     <p>
-                        Established in <strong>2019</strong>, Aerolink Travel is your trusted partner in delivering exceptional travel
-                        services for both <strong>leisure and corporate travelers</strong>. Operating under <strong>Tranava Solutions</strong>, we
-                        specialize in providing end-to-end travel solutions designed to make your journeys smooth,
-                        efficient, and memorable.
+                        Established in <strong>2019</strong>, Aerolink Travel is your trusted partner in delivering
+                        exceptional travel services for both <strong>leisure and corporate travelers</strong>.
+                        Operating under <strong>Travexa Solutions</strong>, we specialize in providing
+                        end-to-end travel solutions designed to make your journeys smooth, efficient, and truly memorable.
                     </p>
                 </section>
 
-                {/* Our Services Section */}
-                <section className="services-section">
+                {/* Services Grid */}
+                <section className="about-services">
+                    <div className="section-tag">What We Offer</div>
                     <h2>Our Services</h2>
-
-                    <div className="service-category">
-                        <h3>Air Ticketing Solutions</h3>
-                        <ul>
-                            <li>Domestic and international flight bookings</li>
-                            <li>Competitive airfare sourcing</li>
-                            <li>Ticket issuance, re-issuance, cancellations, and amendments</li>
-                            <li>Group and bulk travel bookings</li>
-                        </ul>
-                    </div>
-
-                    <div className="service-category">
-                        <h3>Corporate Travel Management</h3>
-                        <ul>
-                            <li>Comprehensive corporate travel solutions</li>
-                            <li>Policy-based airfare management and cost optimization</li>
-                            <li>Dedicated support for business travelers</li>
-                            <li>Travel planning tailored to your company's needs</li>
-                        </ul>
-                    </div>
-
-                    <div className="service-category">
-                        <h3>Travel Support & Assistance</h3>
-                        <ul>
-                            <li>Customized holiday packages</li>
-                            <li>Hotel bookings and accommodation management</li>
-                            <li>Airport transfers and ground arrangements</li>
-                            <li>Visa assistance (as per applicable regulations)</li>
-                        </ul>
+                    <div className="services-grid">
+                        {services.map((svc, i) => (
+                            <div className="service-card" key={i}>
+                                <div className="service-icon">{svc.icon}</div>
+                                <h3>{svc.title}</h3>
+                                <ul>
+                                    {svc.items.map((item, j) => (
+                                        <li key={j}>{item}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
                     </div>
                 </section>
 
-                {/* Why Choose Section */}
-                <section className="why-choose-section">
-                    <h2>Why Choose Aerolink Travel</h2>
-                    <ul>
-                        <li><strong>Customer-Centric:</strong> Personalized solutions for every traveler</li>
-                        <li><strong>Reliable:</strong> Consistent, transparent, and professional service</li>
-                        <li><strong>Experienced Team:</strong> Travel professionals with years of industry expertise</li>
-                        <li><strong>Competitive Pricing:</strong> Trusted airline partnerships to deliver the best value</li>
-                        <li><strong>Flexible & Scalable:</strong> Solutions that grow with your travel needs</li>
-                    </ul>
-                </section>
-
-                {/* Divider */}
-                <div className="section-divider"></div>
-
-                {/* Mission Section */}
-                <section className="mission-section">
-                    <h2>Our Mission</h2>
-                    <p>
-                        To deliver <strong>efficient, transparent, and value-driven</strong> air ticketing and travel services while
-                        maintaining the highest standards of <strong>professionalism and customer care</strong>.
-                    </p>
-                </section>
-
-                {/* Vision Section */}
-                <section className="vision-section">
-                    <h2>Our Vision</h2>
-                    <p>
-                        To be recognized as a <strong>trusted and progressive</strong> travel brand, known for <strong>service excellence</strong>,
-                        <strong>operational efficiency</strong>, and <strong>long-term partnerships</strong>.
-                    </p>
-                </section>
-
-                {/* Divider */}
-                <div className="section-divider"></div>
-
-                {/* CEO's Message & Leadership */}
-                <section className="ceo-section" id="ceo-section">
-                    <h2 className="ceo-section-title">CEO's Message</h2>
-
-                    <div className="ceo-message">
-                        <p>
-                            At Aerolink Travel, we believe that <strong>travel is more than just moving from one destination to another</strong>—it is about trust, precision, and seamless execution. Our goal is to <strong>simplify travel bookings</strong>, ensuring our clients experience <strong>reliable and timely solutions</strong> to meet their needs.
-                        </p>
-                        <p>
-                            With a <strong>professional background in engineering and project management</strong>, I bring a structured, detail-oriented approach to the travel industry. This engineering mindset allows us to operate with <strong>strong systems</strong>, <strong>clear accountability</strong>, and a commitment to <strong>service excellence</strong>.
-                        </p>
-                        <p>
-                            <strong>Aerolink Travel / Tranava Solutions</strong> is built on <strong>integrity, transparency, and reliability</strong>. Whether serving corporate clients, business travelers, or individual customers, our team is dedicated to delivering <strong>efficient travel management solutions</strong> backed by excellent customer care.
-                        </p>
-                        <p>
-                            We look forward to building <strong>long-term partnerships</strong> and becoming your <strong>trusted travel solutions provider</strong>.
-                        </p>
-                        <p className="ceo-signature">
-                            <strong>K.A.V. Ayeshmantha</strong><br />
-                            Founder / Managing Director<br />
-                            Aerolink Travel<br />
-                            A Brand of Tranava Solutions
-                        </p>
-                    </div>
-
-                    <div className="leadership-divider"></div>
-
-                    {/* Leadership Profile */}
-                    <div className="leadership-profile">
-                        <h3>Leadership Profile – Managing Director / CEO</h3>
-
-                        <div className="profile-details">
-                            <p><strong>Name:</strong> K.A.V. Ayeshmantha</p>
-                            <p><strong>Position:</strong> Owner / Managing Director</p>
-                            <p><strong>Education:</strong> B.Sc. (Hons) in Civil Engineering</p>
-                            <p><strong>Profession:</strong> Civil Engineer & Construction Project Manager</p>
-                        </div>
-
-                        <div className="profile-description">
-                            <p>
-                                Mr. K.A.V. Ayeshmantha is a <strong>qualified Civil Engineer</strong> holding a Bachelor of Science (Honours) degree in Civil Engineering. He is currently serving as a <strong>Construction Project Manager</strong> with expertise in <strong>managing complex projects</strong>, <strong>multidisciplinary teams</strong>, <strong>budgets</strong>, and <strong>schedules</strong> under dynamic conditions.
-                            </p>
-                            <p>
-                                His <strong>strong engineering foundation</strong>, combined with <strong>hands-on project management experience</strong>, brings a unique advantage to Aerolink Travel. The same principles applied in large-scale construction—<strong>planning, risk management, cost control, and operational efficiency</strong>—are embedded into his travel management practice.
-                            </p>
-                        </div>
-
-                        <div className="operating-principles">
-                            <h4>Under his leadership, Aerolink Travel operates with a focus on:</h4>
-                            <ul>
-                                <li>Process-driven service delivery</li>
-                                <li>Accuracy and compliance</li>
-                                <li>Client-focused solutions</li>
-                                <li>Long-term business relationships</li>
-                            </ul>
-                        </div>
-
-                        <div className="ceo-vision">
-                            <p>
-                                His vision is to <strong>establish Aerolink Travel as a trusted, professional, and progressive travel brand</strong> for both <strong>corporate and individual clients</strong>.
-                            </p>
+                {/* Why Choose Us */}
+                <section className="about-values">
+                    <div className="values-inner">
+                        <div className="section-tag light">Why Choose Us</div>
+                        <h2>Built on Trust &amp; Excellence</h2>
+                        <div className="values-grid">
+                            {values.map((v, i) => (
+                                <div className="value-card" key={i}>
+                                    <span className="value-icon">{v.icon}</span>
+                                    <h4>{v.title}</h4>
+                                    <p>{v.desc}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>
 
-                {/* CTA Section */}
-                <section className="cta-section">
-                    <h2>Ready to Plan Your Next Journey?</h2>
-                    <p>Contact Aerolink Travel today and experience hassle-free travel solutions!</p>
-                    <button className="btn btn-primary" onClick={() => navigate('/inquiry')}>
+                {/* Mission & Vision */}
+                <section className="about-mv">
+                    <div className="mv-card mission">
+                        <div className="mv-icon">🎯</div>
+                        <h3>Our Mission</h3>
+                        <p>
+                            To deliver <strong>efficient, transparent, and value-driven</strong> air ticketing
+                            and travel services while maintaining the highest standards of
+                            <strong> professionalism and customer care</strong>.
+                        </p>
+                    </div>
+                    <div className="mv-divider">
+                        <div className="mv-divider-line" />
+                        <span>✦</span>
+                        <div className="mv-divider-line" />
+                    </div>
+                    <div className="mv-card vision">
+                        <div className="mv-icon">🌟</div>
+                        <h3>Our Vision</h3>
+                        <p>
+                            To be recognized as a <strong>trusted and progressive</strong> travel brand, known
+                            for <strong>service excellence</strong>, <strong>operational efficiency</strong>,
+                            and <strong>long-term partnerships</strong>.
+                        </p>
+                    </div>
+                </section>
+
+                {/* CEO Section */}
+                <section className="about-ceo">
+                    <div className="section-tag">Leadership</div>
+                    <h2>CEO's Message</h2>
+
+                    <div className="ceo-layout">
+                        <div className="ceo-profile-card">
+                            <div className="ceo-avatar">
+                                <span>KA</span>
+                            </div>
+                            <div className="ceo-info">
+                                <h4>K.A.V. Ayeshmantha</h4>
+                                <span className="ceo-role">Founder &amp; Managing Director</span>
+                                <div className="ceo-badges">
+                                    <span>B.Sc. Civil Engineering</span>
+                                    <span>Project Manager</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="ceo-quotes">
+                            <blockquote>
+                                "At Aerolink Travel, we believe that <strong>travel is more than just moving from one
+                                    destination to another</strong> — it is about trust, precision, and seamless execution.
+                                Our goal is to <strong>simplify travel bookings</strong>, ensuring our clients
+                                experience reliable and timely solutions."
+                            </blockquote>
+                            <blockquote>
+                                "With a <strong>professional background in engineering and project management</strong>,
+                                I bring a structured, detail-oriented approach to the travel industry — with
+                                <strong> strong systems, clear accountability</strong>, and a commitment to service excellence."
+                            </blockquote>
+                            <div className="ceo-signature-block">
+                                <div className="ceo-sig-line" />
+                                <p><strong>K.A.V. Ayeshmantha</strong></p>
+                                <p>Founder / Managing Director, Aerolink Travel</p>
+                                <p className="ceo-brand">A Brand of Travexa Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Leadership Principles */}
+                    <div className="leadership-principles">
+                        <h4>Under His Leadership, Aerolink Operates With:</h4>
+                        <div className="principles-grid">
+                            {['Process-driven service delivery', 'Accuracy and compliance', 'Client-focused solutions', 'Long-term business relationships'].map((p, i) => (
+                                <div className="principle-item" key={i}>
+                                    <span className="principle-num">0{i + 1}</span>
+                                    <span>{p}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* CTA */}
+                <section className="about-cta">
+                    <div className="cta-glow" />
+                    <span className="about-hero-badge light">✈ Ready to Fly?</span>
+                    <h2>Plan Your Next Journey With Us</h2>
+                    <p>Contact Aerolink Travel today and experience hassle-free, premium travel solutions.</p>
+                    <button className="cta-btn" onClick={() => navigate('/inquiry')}>
                         Make an Inquiry
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
                     </button>
                 </section>
+
             </div>
         </div>
     );
